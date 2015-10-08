@@ -5,6 +5,8 @@
  */
 package hogwartsschool;
 
+import byui.cit260.hogwartsSchool.model.GeneralScenes;
+
 /**
  *
  * @author chad
