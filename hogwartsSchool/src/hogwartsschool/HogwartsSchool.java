@@ -6,6 +6,7 @@
 package hogwartsschool;
 
 import byui.cit260.hogwartsSchool.model.GeneralScenes;
+import byui.cit260.hogwartsschool.model.Actor;
 import byui.cit260.hogwartsschool.model.ClassroomScene;
 import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
@@ -42,6 +43,16 @@ public class HogwartsSchool {
        map.setNumColumns(25);
        String map1 = map.toString();
        System.out.println(map1);
+       
+       Actor player1 = new Actor();
+       player1.setName("Chad");
+       player1.setDescription("Amazing");
+       player1.setHouse("Slytherin");
+       player1.setCoordinates(21);
+       player1.setPoints(9000);
+       String chad = player1.toString();
+       System.out.println(chad);
+       
     }
     
 }
