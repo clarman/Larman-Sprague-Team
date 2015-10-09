@@ -7,6 +7,7 @@ package hogwartsschool;
 
 import byui.cit260.hogwartsSchool.model.GeneralScenes;
 import byui.cit260.hogwartsschool.model.ClassroomScene;
+import byui.cit260.hogwartsschool.model.Location;
 
 /**
  *
@@ -28,6 +29,12 @@ public class HogwartsSchool {
        potions.setInstructions("make potion");
        String potionsInfo = potions.toString();
        System.out.println(potionsInfo);
+      
+       Location room = new Location();
+       room.setRow(5);
+       room.setColumn(14);
+       String roomloc = room.toString();
+       System.out.println(roomloc);
     }
     
 }
