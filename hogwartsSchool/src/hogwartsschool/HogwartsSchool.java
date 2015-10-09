@@ -8,6 +8,7 @@ package hogwartsschool;
 import byui.cit260.hogwartsSchool.model.GeneralScenes;
 import byui.cit260.hogwartsschool.model.ClassroomScene;
 import byui.cit260.hogwartsschool.model.Location;
+import byui.cit260.hogwartsschool.model.Map;
 
 /**
  *
@@ -35,6 +36,12 @@ public class HogwartsSchool {
        room.setColumn(14);
        String roomloc = room.toString();
        System.out.println(roomloc);
+       
+       Map map = new Map();
+       map.setNumRows(25);
+       map.setNumColumns(25);
+       String map1 = map.toString();
+       System.out.println(map1);
     }
     
 }
