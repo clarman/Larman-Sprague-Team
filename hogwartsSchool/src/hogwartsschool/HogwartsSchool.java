@@ -11,6 +11,7 @@ import byui.cit260.hogwartsschool.model.ClassroomScene;
 import byui.cit260.hogwartsschool.model.Game;
 import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
+import byui.cit260.hogwartsschool.model.Notes;
 import byui.cit260.hogwartsschool.model.Player;
 
 /**
@@ -65,7 +66,12 @@ public class HogwartsSchool {
        String total = time.toString();
        System.out.println(total);
        
-       
+       Notes note = new Notes();
+       note.setNoteType("type");
+       note.setQuanity("quanity");
+       note.setDescription("classroom");
+       String type = note.toString();
+       System.out.println(type);
     }
     
 }
