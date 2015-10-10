@@ -10,6 +10,7 @@ import byui.cit260.hogwartsschool.model.Actor;
 import byui.cit260.hogwartsschool.model.ClassroomScene;
 import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
+import byui.cit260.hogwartsschool.model.Player;
 
 /**
  *
@@ -53,6 +54,10 @@ public class HogwartsSchool {
        String chad = player1.toString();
        System.out.println(chad);
        
+       Player playerone = new Player();
+       player1.setName("Rain");
+       String rain = player1.toString();
+       System.out.println(rain);
     }
     
 }
