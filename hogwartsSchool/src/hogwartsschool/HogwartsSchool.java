@@ -13,6 +13,7 @@ import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
 import byui.cit260.hogwartsschool.model.Notes;
 import byui.cit260.hogwartsschool.model.Player;
+import byui.cit260.hogwartsschool.model.Questions;
 
 /**
  *
@@ -72,6 +73,12 @@ public class HogwartsSchool {
        note.setDescription("classroom");
        String type = note.toString();
        System.out.println(type);
+       
+       Questions answers = new Questions();
+       answers.setQuiz("quiz");
+       answers.setExam("exam");
+       String quiz = answers.toString();
+       System.out.println(quiz);
     }
     
 }
