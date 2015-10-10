@@ -8,6 +8,7 @@ package hogwartsschool;
 import byui.cit260.hogwartsSchool.model.GeneralScenes;
 import byui.cit260.hogwartsschool.model.Actor;
 import byui.cit260.hogwartsschool.model.ClassroomScene;
+import byui.cit260.hogwartsschool.model.Game;
 import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
 import byui.cit260.hogwartsschool.model.Player;
@@ -55,9 +56,16 @@ public class HogwartsSchool {
        System.out.println(chad);
        
        Player playerone = new Player();
-       player1.setName("Rain");
-       String rain = player1.toString();
+       playerone.setName("Rain");
+       String rain = playerone.toString();
        System.out.println(rain);
+       
+       Game time = new Game(); 
+       time.setTotalTime("total");
+       String total = time.toString();
+       System.out.println(total);
+       
+       
     }
     
 }
