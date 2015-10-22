@@ -22,4 +22,14 @@ public class ClassroomControl {
         double answer = p2 / 231;
         return answer;
     }
+    public double calculateStarsMagnitude(double magnitude, double distance){
+        if(magnitude < 0 || magnitude > 100){
+            return -1;
+        }
+        if(distance < 20 || distance > 40){
+            return -1;
+        }
+        double apparMag = (magnitude/distance) * (magnitude/distance);
+        return apparMag;
+    }
 }

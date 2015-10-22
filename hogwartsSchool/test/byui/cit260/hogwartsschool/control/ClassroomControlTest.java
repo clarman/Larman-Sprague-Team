@@ -96,5 +96,83 @@ public class ClassroomControlTest {
         assertEquals(expResult, result, 0.01);
         
     }
+
+    /**
+     * Test of calculateStarsMagnitude method, of class ClassroomControl.
+     */
+    @Test
+    public void testCalculateStarsMagnitude() {
+        System.out.println("calculateStarsMagnitude");
+        //test case 1
+        System.out.println("\tTest case # 1");
+        double magnitude = 60.0;
+        double distance = 32.0;
+        ClassroomControl instance = new ClassroomControl();
+        double expResult = 3.52;
+        double result = instance.calculateStarsMagnitude(magnitude, distance);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        //test case 2
+        System.out.println("\tTest case # 2");
+        magnitude = -1.0;
+        distance = 40.0;
+        expResult = -1;
+        result = instance.calculateStarsMagnitude(magnitude, distance);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //test case 3
+        System.out.println("\tTest case # 3");
+        magnitude = 100.0;
+        distance = -1.0;
+        expResult = -1;
+        result = instance.calculateStarsMagnitude(magnitude, distance);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //test case 4
+        System.out.println("\tTest case # 4");
+        magnitude = 50.0;
+        distance = 15.0;
+        expResult = -1;
+        result = instance.calculateStarsMagnitude(magnitude, distance);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //test case 5
+        System.out.println("\tTest case # 5");
+        magnitude = 0.0;
+        distance = 40.0;
+        expResult = 0;
+        result = instance.calculateStarsMagnitude(magnitude, distance);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //test case 6
+        System.out.println("\tTest case # 6");
+        magnitude = 100.0;
+        distance = 20.0;
+        expResult = 25;
+        result = instance.calculateStarsMagnitude(magnitude, distance);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         //test case 7
+        System.out.println("\tTest case # 7");
+        magnitude = 100;
+        distance = 40.0;
+        expResult = 6.25;
+        result = instance.calculateStarsMagnitude(magnitude, distance);
+        assertEquals(expResult, result, 0.01);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }
