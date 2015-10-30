@@ -5,6 +5,8 @@
  */
 package byui.cit260.hogwartsschool.view;
 
+import byui.cit260.hogwartsschool.control.GameControl;
+import hogwartsschool.HogwartsSchool;
 import java.util.Scanner;
 
 /**
@@ -86,5 +88,28 @@ public class MainMenuView {
                 break;
         }
     }
-    
+
+    private void startNewGame() {
+        // create a new game
+       GameControl.createNewGame(HogwartsSchool.getPlayer());
+       
+       // display the game menu
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.displayMenu();
+    }
+
+    private void startExistingGame() {
+        System.out.println("*** startExistingGame function called ***");
+    }
+
+    private void displayHelpMenu() {
+        // display the help menu
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
+    }
+
+    private void saveGame() {
+        System.out.println("*** saveGame function called ***");
+    }
+   
 }
