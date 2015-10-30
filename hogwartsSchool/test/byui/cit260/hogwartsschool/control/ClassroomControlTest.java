@@ -183,7 +183,7 @@ public class ClassroomControlTest {
         double distance = 4.0;
         ClassroomControl instance = new ClassroomControl();
         double expResult = 4.0;
-        double result = instance.calculateStarsMagnitude(time, distance);
+        double result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -193,7 +193,7 @@ public class ClassroomControlTest {
         time = 1.0;
         distance = -15.0;
         expResult = -15;
-        result = instance.calculateStarsMagnitude(time, distance);
+        result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -203,7 +203,7 @@ public class ClassroomControlTest {
         time = 0.0;
         distance = 4.0;
         expResult =0.0;
-        result = instance.calculateStarsMagnitude(time, distance);
+        result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -213,7 +213,7 @@ public class ClassroomControlTest {
         time = 40.0;
         distance = 100.0;
         expResult = 100.0;
-        result = instance.calculateStarsMagnitude(time, distance);
+        result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -223,7 +223,7 @@ public class ClassroomControlTest {
         time =  1.0;
         distance = 1.0;
         expResult = 1.0;
-        result = instance.calculateStarsMagnitude(time, distance);
+        result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

@@ -32,4 +32,14 @@ public class ClassroomControl {
         double apparMag = (magnitude/distance) * (magnitude/distance);
         return apparMag;
     }
+    public double calculateAverageAcceleration(double time, double distance) {
+        if(time < 1 || time > 40) {
+            return -1;
+        }
+        if (distance < 1) {
+            return -1;
+        }
+        double avgAccel = (distance/time) * time;
+        return avgAccel;
+    }
 }
