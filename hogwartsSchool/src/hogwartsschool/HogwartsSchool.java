@@ -22,9 +22,25 @@ import byui.cit260.hogwartsschool.view.StartProgramView;
  */
 public class HogwartsSchool {
 
-   /**
-     * @param args the command line arguments
-     */
+   private static Game currentGame = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        HogwartsSchool.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        HogwartsSchool.player = player;
+    }
+   private static Player player = null;
+   
     public static void main(String[] args) {
        // Create StartProgramView and start the program
         StartProgramView startProgramView = new StartProgramView();

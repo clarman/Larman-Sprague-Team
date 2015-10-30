@@ -5,6 +5,10 @@
  */
 package byui.cit260.hogwartsschool.view;
 
+import byui.cit260.hogwartsschool.control.ProgramControl;
+import byui.cit260.hogwartsschool.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author cierasprague
@@ -20,7 +24,17 @@ public class StartProgramView {
         this.displayBanner(); 
         
         //prompt the player to enter their name Retrieve the name of the player
-        String playerName = this.getPlayersName(); 
+        String playersName = this.getPlayersName();
+        
+        // Create and sane the player object
+        Player player = ProgramControl.createPlayer(playersName);
+        
+        //Display a personalized welcome message
+        this.displayWelcomeMessage(player);
+        
+        //Display Main Menu
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMenu();
    }
 
     private void displayBanner() {
@@ -61,17 +75,24 @@ public class StartProgramView {
              System.out.println("Enter the player's name below:");
              
              //get the name from the keyboard and trim off the blanks
-             playersName = keyboard.newLine(); 
-             palyersName = playersName.trim();
+             playersName = keyboard.nextLine(); 
+             playersName = playersName.trim();
             
              //if the name is invalid (less than two character in length
              if (playersName.length() <2) {
                  System.out.println("Invalid name - the name must not be blank");
                  continue; // and repeat again
              }
-             break; // out of the (exit) the repetition
+             break; // out of the (exit) the repetition 
          }
          
-         return playerName; // return the name
+         return playersName; // return the name
+    }
+
+    private void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n================================================");
+        System.out.println("\tWelcome to Hogwarts" + " " + player.getName());
+        System.out.println("\tWe hope you have a magical journey!");
+        System.out.println("==================================================");
     }
 }
