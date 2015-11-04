@@ -11,13 +11,18 @@ import java.util.Scanner;
  *
  * @author cierasprague
  */
-public class GameMenuView {
-
-   private final String MENU = "\n"
+class CurrentPointsView {
+    
+    private final String MENU = "\n"
             + "\n---------------------------------------------------------------"
-            + "\n| GameMenu                                                    |"
+            + "\n| Current Points                                              |"
             + "\n---------------------------------------------------------------"
-            + "\nV - View map                                                   "
+            + "\n Gryffindor   *Total house points*                             "
+            + "\n Hufflepuff   *Total house points*                             "
+            + "\n Ravenclaw    *Total house points*                             "
+            + "\n Slytherin    *Total house points*                             "
+            + "\n---------------------------------------------------------------"
+            + "\nV - View map"
             + "\nP - View current points                                        "
             + "\nM - Move to a new location                                     "
             + "\nE - Explore the area                                           "
@@ -102,8 +107,7 @@ public class GameMenuView {
                 break;
         }
     }
-
-    private void viewMap() {
+      private void viewMap() {
         System.out.println("\n*** viewMap is called ***");
     }
 
@@ -135,6 +139,5 @@ public class GameMenuView {
     private void displayHelpMenu() {
        System.out.println("\n*** displayHelpMenu ***");
     }
-    
     
 }
