@@ -20,6 +20,7 @@ public class ClassroomControlTest {
     /**
      * Test of calculateCauldronsSize method, of class ClassroomControl.
      */
+    @Test
     public void testCalculateCauldronsSize() {
         System.out.println("calculateCauldronsSize");
         // test case 1
@@ -99,6 +100,7 @@ public class ClassroomControlTest {
     /**
      * Test of calculateStarsMagnitude method, of class ClassroomControl.
      */
+    @Test
     public void testCalculateStarsMagnitude() {
         System.out.println("calculateStarsMagnitude");
         //test case 1
@@ -175,6 +177,7 @@ public class ClassroomControlTest {
 /**
      * Test of calculateStarsMagnitude method, of class ClassroomControl.
      */
+    @Test
     public void testAverageAcceleration() {
         System.out.println("calculateAverageAcceleration");
         //test case 1
@@ -192,7 +195,7 @@ public class ClassroomControlTest {
         System.out.println("\tTest case # 2");
         time = 1.0;
         distance = -15.0;
-        expResult = -15;
+        expResult = -1;
         result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
@@ -202,7 +205,7 @@ public class ClassroomControlTest {
         System.out.println("\tTest case # 3");
         time = 0.0;
         distance = 4.0;
-        expResult =0.0;
+        expResult =-1;
         result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
@@ -210,9 +213,9 @@ public class ClassroomControlTest {
         
          //test case 4
         System.out.println("\tTest case # 4");
-        time = 40.0;
-        distance = 100.0;
-        expResult = 100.0;
+        time = 50.0;
+        distance = 4.0;
+        expResult = -1;
         result = instance.calculateAverageAcceleration(time, distance);
         assertEquals(expResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
@@ -230,8 +233,6 @@ public class ClassroomControlTest {
     }
 
         
-    private void assertEquals(double expResult, double result, double d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
 }
