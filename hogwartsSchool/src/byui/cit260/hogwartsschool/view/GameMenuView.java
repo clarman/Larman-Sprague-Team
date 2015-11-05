@@ -5,6 +5,7 @@
  */
 package byui.cit260.hogwartsschool.view;
 
+import byui.cit260.hogwartsschool.control.QuestionsControl;
 import java.util.Scanner;
 
 /**
@@ -52,11 +53,11 @@ public class GameMenuView {
              //promp for the player's name
              System.out.println("Enter the menu item below:");
              
-             //get the name from the keyboard and trim off the blanks
+             //get the menu item from the keyboard and trim off the blanks
              menuItem = keyboard.nextLine(); 
              menuItem = menuItem.trim();
             
-             //if the name is invalid (less than two character in length
+             //if the menu item is invalid (less than one character in length
              if (menuItem.length() <1) {
                  System.out.println("Invalid menu item - the menu item must not be blank");
                  continue; // and repeat again
@@ -120,7 +121,9 @@ public class GameMenuView {
     }
 
     private void viewNotes() {
-        System.out.println("\n*** viewNotes is called ***");
+        // display view notes
+        DisplayNotesView notesMenu = new DisplayNotesView();
+        notesMenu.displayMenu();
     }
 
     private void takeNotes() {
@@ -128,7 +131,8 @@ public class GameMenuView {
     }
 
     private void takeExam() {
-        System.out.println("\n*** takeExam is called ***");
+         // create a new game
+       QuestionsControl.takeExam();
     }
 
     private void displayHelpMenu() {
