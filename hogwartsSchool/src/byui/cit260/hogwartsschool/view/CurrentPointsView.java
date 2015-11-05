@@ -22,8 +22,7 @@ class CurrentPointsView {
             + "\n Ravenclaw    *Total house points*                             "
             + "\n Slytherin    *Total house points*                             "
             + "\n---------------------------------------------------------------"
-            + "\nV - View map"
-            + "\nP - View current points                                        "
+            + "\nV - View map                                                   "
             + "\nM - Move to a new location                                     "
             + "\nE - Explore the area                                           "
             + "\nN - View notes                                                 "
@@ -79,9 +78,6 @@ class CurrentPointsView {
             case 'V': // view map
                 this.viewMap();
                 break;
-            case 'P': // view current points
-                this.viewCurrentPoints();
-                break;
             case 'M': // move to a new location
                 this.moveLocation();
                 break;
@@ -109,11 +105,6 @@ class CurrentPointsView {
     }
       private void viewMap() {
         System.out.println("\n*** viewMap is called ***");
-    }
-
-    private void viewCurrentPoints() {
-        CurrentPointsView currentPoints = new CurrentPointsView();
-        currentPoints.displayMenu();
     }
 
     private void moveLocation() {
