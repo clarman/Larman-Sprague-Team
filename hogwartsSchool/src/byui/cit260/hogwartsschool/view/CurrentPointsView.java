@@ -5,20 +5,24 @@
  */
 package byui.cit260.hogwartsschool.view;
 
-import byui.cit260.hogwartsschool.control.QuestionsControl;
 import java.util.Scanner;
 
 /**
  *
  * @author cierasprague
  */
-public class GameMenuView {
-
-   private final String MENU = "\n"
+class CurrentPointsView {
+    
+    private final String MENU = "\n"
             + "\n---------------------------------------------------------------"
-            + "\n| GameMenu                                                    |"
+            + "\n| Current Points                                              |"
             + "\n---------------------------------------------------------------"
-            + "\nV - View map                                                   "
+            + "\n Gryffindor   *Total house points*                             "
+            + "\n Hufflepuff   *Total house points*                             "
+            + "\n Ravenclaw    *Total house points*                             "
+            + "\n Slytherin    *Total house points*                             "
+            + "\n---------------------------------------------------------------"
+            + "\nV - View map"
             + "\nP - View current points                                        "
             + "\nM - Move to a new location                                     "
             + "\nE - Explore the area                                           "
@@ -53,11 +57,11 @@ public class GameMenuView {
              //promp for the player's name
              System.out.println("Enter the menu item below:");
              
-             //get the menu item from the keyboard and trim off the blanks
+             //get the name from the keyboard and trim off the blanks
              menuItem = keyboard.nextLine(); 
              menuItem = menuItem.trim();
             
-             //if the menu item is invalid (less than one character in length
+             //if the name is invalid (less than two character in length
              if (menuItem.length() <1) {
                  System.out.println("Invalid menu item - the menu item must not be blank");
                  continue; // and repeat again
@@ -103,8 +107,7 @@ public class GameMenuView {
                 break;
         }
     }
-
-    private void viewMap() {
+      private void viewMap() {
         System.out.println("\n*** viewMap is called ***");
     }
 
@@ -122,9 +125,7 @@ public class GameMenuView {
     }
 
     private void viewNotes() {
-        // display view notes
-        DisplayNotesView notesMenu = new DisplayNotesView();
-        notesMenu.displayMenu();
+        System.out.println("\n*** viewNotes is called ***");
     }
 
     private void takeNotes() {
@@ -132,13 +133,11 @@ public class GameMenuView {
     }
 
     private void takeExam() {
-         // create a new game
-       QuestionsControl.takeExam();
+        System.out.println("\n*** takeExam is called ***");
     }
 
     private void displayHelpMenu() {
        System.out.println("\n*** displayHelpMenu ***");
     }
-    
     
 }
