@@ -24,6 +24,7 @@ public class GameMenuView {
             + "\nE - Explore the area                                           "
             + "\nN - View notes                                                 "
             + "\nT - Take notes                                                 "
+            + "\nS - Star Input                                                           "
             + "\nX - Take exam                                                  "
             + "\nH - Help                                                       "
             + "\nQ - Quit                                                       "
@@ -90,6 +91,9 @@ public class GameMenuView {
             case 'T': // take notes
                 this.takeNotes();
                 break;
+            case 'S': //calculateStarsMagntude
+                this.calculateStarsMagnitude();
+                break;
             case 'X': // take exam
                 this.takeExam();
                 break;
@@ -133,11 +137,16 @@ public class GameMenuView {
 
     private void takeExam() {
          // create a new game
-       QuestionsControl.takeExam();
+        QuestionsControl.takeExam();
     }
 
     private void displayHelpMenu() {
        System.out.println("\n*** displayHelpMenu ***");
+    }
+
+    private void calculateStarsMagnitude() {
+       StarTempView tempStar = new StarTempView();
+       tempStar.display();
     }
     
     
