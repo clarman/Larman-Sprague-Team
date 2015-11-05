@@ -25,6 +25,7 @@ public class GameMenuView {
             + "\nN - View notes                                                 "
             + "\nT - Take notes                                                 "
             + "\nX - Take exam                                                  "
+            + "\nC - CHALLENGE                                                 "
             + "\nH - Help                                                       "
             + "\nQ - Quit                                                       "
             + "\n---------------------------------------------------------------";
@@ -93,6 +94,9 @@ public class GameMenuView {
             case 'X': // take exam
                 this.takeExam();
                 break;
+            case 'C': // Challenge, flying formula 
+                this.takeChallenge();
+                break;
             case 'H': // help
                 this.displayHelpMenu();
                 break;
@@ -140,5 +144,9 @@ public class GameMenuView {
        System.out.println("\n*** displayHelpMenu ***");
     }
     
+    private void takeChallenge() {
+        TakeChallenge takeChallenge = new TakeChallenge();
+        takeChallenge.displayChallenge(); 
+    }
     
 }

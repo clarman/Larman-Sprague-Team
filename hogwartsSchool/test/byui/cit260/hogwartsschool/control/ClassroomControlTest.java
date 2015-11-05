@@ -175,7 +175,7 @@ public class ClassroomControlTest {
         //fail("The test case is a prototype.");
     }
 /**
-     * Test of calculateStarsMagnitude method, of class ClassroomControl.
+     * Test of calculateAverageAcceleration method, of class ClassroomControl.
      */
     @Test
     public void testAverageAcceleration() {
