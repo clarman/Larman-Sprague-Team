@@ -20,6 +20,7 @@ class StarTempView {
        
             System.out.println("\nWhat is the star's magnitude?");
             double input = this.getInput(); 
+            
             double magnitude = input; 
             
             System.out.println("\nWhat is the star's distance from Earth?");
