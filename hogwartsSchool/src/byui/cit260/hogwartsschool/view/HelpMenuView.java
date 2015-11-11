@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author cierasprague
  */
-public class HelpMenuView {
-
-    private final String MENU = "\n"
+public class HelpMenuView extends View{
+    
+    public HelpMenuView(){
+        super("\n"
             + "\n---------------------------------------------------------------"
             + "\n| Help Menu                                                   |"
             + "\n---------------------------------------------------------------"
@@ -23,49 +24,15 @@ public class HelpMenuView {
             + "\nH - What house am I in?"
             + "\nN - What are notes?"
             + "\nQ - Quit"
-            + "\n---------------------------------------------------------------";
-
-    void displayMenu() {
-       
-        char selection = ' ';
-        do{
-            System.out.println(MENU); //display the help menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); // do action based on selection
-            
-        } while (selection != 'Q'); // an selection is not "Quit"
+            + "\n---------------------------------------------------------------");
     }
-
-    private String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-         String menuItem = null; 
-         Scanner keyboard = new Scanner(System.in); // keyboard input stream
-         
-         while(!valid) { // while a valid name has not been retrieved
-             
-             //promp for the player's name
-             System.out.println("Enter the menu item below:");
-             
-             //get the name from the keyboard and trim off the blanks
-             menuItem = keyboard.nextLine(); 
-             menuItem = menuItem.trim();
-            
-             //if the name is invalid (less than two character in length
-             if (menuItem.length() <1) {
-                 System.out.println("Invalid menu item - the menu item must not be blank");
-                 continue; // and repeat again
-             }
-             break; // out of the (exit) the repetition 
-         }
-         
-         return menuItem; // return the name
     
-    }
-
-    private void doAction(char choice) {
+    @Override
+    public boolean doAction(Object inputs) {
+        
+        String value = (String) inputs; 
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
         
         switch (choice) {
             case 'G': // What is the goal of the game?
@@ -89,6 +56,7 @@ public class HelpMenuView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        
     }
 
     private void goalOfGame() {
