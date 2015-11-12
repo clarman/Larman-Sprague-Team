@@ -51,12 +51,12 @@ public class HelpMenuView extends View{
                 this.whatAreNotes();
                 break;
             case 'Q': // quit program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+        return false;
     }
 
     private void goalOfGame() {

@@ -71,12 +71,12 @@ public class GameMenuView extends View {
                 this.displayHelpMenu();
                 break;
             case 'Q': // quit program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+        return false;
     }
 
     private void viewMap() {
@@ -85,7 +85,7 @@ public class GameMenuView extends View {
 
     private void viewCurrentPoints() {
         CurrentPointsView currentPoints = new CurrentPointsView();
-        currentPoints.displayMenu();
+        currentPoints.display();
     }
 
     private void moveLocation() {
@@ -99,7 +99,7 @@ public class GameMenuView extends View {
     private void viewNotes() {
         // display view notes
         DisplayNotesView notesMenu = new DisplayNotesView();
-        notesMenu.displayMenu();
+        notesMenu.display();
     }
 
     private void takeNotes() {
