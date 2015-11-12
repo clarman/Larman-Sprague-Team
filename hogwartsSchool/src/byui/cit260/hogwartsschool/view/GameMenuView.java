@@ -93,7 +93,8 @@ public class GameMenuView extends View {
     }
 
     private void exploreArea() {
-        System.out.println("\n*** exploreArea is called ***");
+        ExploreAreaView exploreArea = new ExploreAreaView();
+        exploreArea.display();
     }
 
     private void viewNotes() {
