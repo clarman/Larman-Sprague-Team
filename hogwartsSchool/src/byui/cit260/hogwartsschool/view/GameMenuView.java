@@ -80,7 +80,8 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        System.out.println("\n*** viewMap is called ***");
+        MapView viewMap = new MapView();
+        viewMap.display();
     }
 
     private void viewCurrentPoints() {
