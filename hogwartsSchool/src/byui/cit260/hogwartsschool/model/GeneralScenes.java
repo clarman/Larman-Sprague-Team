@@ -14,7 +14,6 @@ import java.util.Objects;
  */
 public class GeneralScenes implements Serializable{
     private String description;
-    private Location[] location;
 
     public GeneralScenes() {
     }
@@ -27,20 +26,6 @@ public class GeneralScenes implements Serializable{
         this.description = description;
     }
 
-    public Location[] getLocation() {
-        return location;
-    }
-
-    /**
-     *
-     * @param location
-     */
-    public void setLocation(Location[] location) {
-        this.location = location;
-    }
-    
-    
-      
     public String toString() {
         return "GeneralScenes{" + "description=" + description + '}';
     }
