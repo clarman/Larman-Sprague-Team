@@ -15,6 +15,8 @@ import java.util.Objects;
 public class Questions implements Serializable{
     private String quiz; 
     private String exam;
+    private Location location;
+    private Game game;
 
     public Questions() {
     }
@@ -34,6 +36,23 @@ public class Questions implements Serializable{
     public void setExam(String exam) {
         this.exam = exam;
     }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    
 
     @Override
     public String toString() {

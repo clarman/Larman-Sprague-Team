@@ -13,7 +13,10 @@ import java.util.Objects;
  * @author cierasprague
  */
 public class Player implements Serializable {
-    private String name; 
+    private String name;
+    private String house;
+    private long points;
+    private Game[] game;
 
     public Player() {
     }
@@ -25,6 +28,31 @@ public class Player implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getHouse() {
+        return house;
+    }
+
+    public void setHouse(String house) {
+        this.house = house;
+    }
+
+    public long getPoints() {
+        return points;
+    }
+
+    public void setPoints(long points) {
+        this.points = points;
+    }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
+    }
+    
 
     @Override
     public String toString() {

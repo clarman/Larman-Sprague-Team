@@ -6,6 +6,7 @@
 package byui.cit260.hogwartsschool.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -13,7 +14,12 @@ import java.util.Objects;
  * @author cierasprague
  */
 public class Game implements Serializable {
-    private String totalTime; 
+    private String totalTime;
+    private Player player;
+    private Map map;
+    private String[] actors;
+    private String[] Questions;
+    private ArrayList<Notes> notes;
 
     public Game() {
     }
@@ -25,6 +31,48 @@ public class Game implements Serializable {
     public void setTotalTime(String totalTime) {
         this.totalTime = totalTime;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public String[] getActors() {
+        return actors;
+    }
+
+    public void setActors(String[] actors) {
+        this.actors = actors;
+    }
+
+    public String[] getQuestions() {
+        return Questions;
+    }
+
+    public void setQuestions(String[] Questions) {
+        this.Questions = Questions;
+    }
+
+    public ArrayList<Notes> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(ArrayList<Notes> notes) {
+        this.notes = notes;
+    }
+
+    
 
     @Override
     public String toString() {

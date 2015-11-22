@@ -5,103 +5,67 @@
  */
 package byui.cit260.hogwartsschool.model;
 
+import java.awt.Point;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author chad
  */
-public class Actor implements Serializable{
-    private String name;
-    private String description;
-    private String house;
-    private double coordinates;
-    private double points;
+public enum Actor implements Serializable{
+    
+    professorSnape("He is the potions master, and the head of Slytherin house."),
+    professorFlitwick("He is the charms teacher, and the head of Ravenclaw house."),
+    professorBabbling("She is the Ancient Runes teacher."),
+    professorLupin("He is the Defense Against the Dark Arts teacher."),
+    professorSinistra("She is the Astronomy teacher at Hogwarts."),
+    professorMcGonagall("She is the Transfiguration teacher, and the head of Gryffindor house."),
+    professorTrelawney("She is the Divination teacher."),
+    professorSprout("She is the Herbology teacher, and head of Hufflepuff house."),
+    madamHooch("She is the Flying instructor and Quidditch referee"),
+    Hagrid("He is the Care of Magical Creatures teacher."),
+    moaningMyrtle("She is the ghost in the bathroom.");
+ 
+    private final String description;
+    private final Point coordinates;
+    private Location location;
+    private Game game;
+   
 
-    public Actor() {
+    Actor(String description) {
+        this.description = description;
+        coordinates = new Point(1,1);
     }
     
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getHouse() {
-        return house;
-    }
-
-    public void setHouse(String house) {
-        this.house = house;
-    }
-
-    public double getCoordinates() {
+    
+    public Point getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(double coordinates) {
-        this.coordinates = coordinates;
+    public Location getLocation() {
+        return location;
     }
 
-    public double getPoints() {
-        return points;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
-    public void setPoints(double points) {
-        this.points = points;
+    public Game getGame() {
+        return game;
     }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    
+
 
     @Override
     public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + ", house=" + house + ", coordinates=" + coordinates + ", points=" + points + '}';
+        return "Actor{" + "name=" + ", description=" + description + ", coordinates=" + coordinates +'}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + Objects.hashCode(this.description);
-        hash = 67 * hash + Objects.hashCode(this.house);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.points) ^ (Double.doubleToLongBits(this.points) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.house, other.house)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.coordinates) != Double.doubleToLongBits(other.coordinates)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.points) != Double.doubleToLongBits(other.points)) {
-            return false;
-        }
-        return true;
-    }
 }

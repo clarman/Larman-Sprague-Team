@@ -15,7 +15,9 @@ import java.util.Objects;
 public class Notes implements Serializable {
     private String noteType;
     private String quanity; 
-    private String description; 
+    private String description;
+    private Location location;
+    private Game game;
 
     public Notes() {
     }
@@ -43,6 +45,23 @@ public class Notes implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    
 
     @Override
     public int hashCode() {

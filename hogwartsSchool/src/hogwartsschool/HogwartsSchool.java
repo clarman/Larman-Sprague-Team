@@ -5,7 +5,7 @@
  */
 package hogwartsschool;
 
-import byui.cit260.hogwartsSchool.model.GeneralScenes;
+import byui.cit260.hogwartsSchool.model.GeneralScene;
 import byui.cit260.hogwartsschool.model.Actor;
 import byui.cit260.hogwartsschool.model.ClassroomScene;
 import byui.cit260.hogwartsschool.model.Game;

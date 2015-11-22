@@ -15,6 +15,7 @@ import java.util.Objects;
 public class ClassroomScene implements Serializable{
     private String description;
     private String instructions;
+    private Location[] location; 
 
     public ClassroomScene() {
     }
@@ -35,6 +36,15 @@ public class ClassroomScene implements Serializable{
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
+
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
+    
 
     @Override
     public String toString() {

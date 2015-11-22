@@ -14,8 +14,33 @@ import java.io.Serializable;
 public class Map implements Serializable{
     private double numRows;
     private double numColumns;
+    private Location[][] locations;
+    private Game[] game;
 
     public Map() {
+    }
+
+    public Map(int numRows, int numColumns) {
+        
+        if(numRows < 1 || numColumns < 1){
+            System.out.println("The number of rows and columns must be > zer0");
+            return;
+        }
+        this.numRows = numRows;
+        this.numColumns = numColumns;
+        
+        this.locations = new Location[numRows][numColumns];
+        for(int row = 0; row < numRows; row++){
+            for(int column = 0; column < numColumns; column++){
+                
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                
+                locations[row][column] = location;
+            }
+        }
+        
     }
 
     public double getNumRows() {
@@ -33,6 +58,24 @@ public class Map implements Serializable{
     public void setNumColumns(double numColumns) {
         this.numColumns = numColumns;
     }
+
+    public Location[][] getLocation() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+    
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
+    }
+    
 
     @Override
     public String toString() {
@@ -64,6 +107,10 @@ public class Map implements Serializable{
         }
         return true;
     }
+
+    
+       
+
     
     
 }
