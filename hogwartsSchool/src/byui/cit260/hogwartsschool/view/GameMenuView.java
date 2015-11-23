@@ -109,8 +109,8 @@ public class GameMenuView extends View {
     }
 
     private void takeExam() {
-         // create a new game
-        QuestionsControl.takeExam();
+        QuestionsControl question = new QuestionsControl(); 
+        question.getQuestion();
     }
 
     private void displayHelpMenu() {
