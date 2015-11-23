@@ -5,6 +5,7 @@
  */
 package byui.cit260.hogwartsschool.control;
 
+import byui.cit260.hogwartsschool.model.Questions;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,27 @@ import java.util.Scanner;
  */
 public class QuestionsControl {
 
-    public static void takeExam() {
+    
+   int[] examQuestions = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+   
+   public int getQuestion() {
+       int value = 4;
+       for(int question : examQuestions){
+           if(examQuestions[question] == value){
+               return question;
+           }
+       }
+       return -1;
+   }
+    
+    
+    
+    
+    
+    
+
+    /*pu
+   blic static void takeExam() {
         double actorPoints = 0;
         char answer;
         System.out.println("\n 1. What Potion makes you successful in all your"
@@ -155,6 +176,6 @@ public class QuestionsControl {
             System.out.println("Incorrect");
         }
         System.out.println("Your score is" + " " + actorPoints);
-        }
+        }*/
     }
     
