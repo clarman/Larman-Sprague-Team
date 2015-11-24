@@ -86,11 +86,11 @@ public class GameMenuView extends View {
         Map map = HogwartsSchool.getCurrentGame().getMap();
         Location[][] locations = map.getLocation();
         System.out.println("Hogwarts Map");
-        System.out.println("1     2     3     4     5");
+        System.out.println("  1   2   3   4   5");
         for (int i = 0; i < locations.length; i++) {
             
             System.out.println("----------------------------------------------");
-            System.out.println(i + 1);
+            System.out.print(i + 1);
             for (int j = 0; j < locations[i].length; j++) {
                 Location location = locations[i][j];
                 System.out.print("|");
