@@ -7,6 +7,7 @@ package byui.cit260.hogwartsschool.control;
 
 import byui.cit260.hogwartsschool.model.Game;
 import byui.cit260.hogwartsschool.model.Map;
+import byui.cit260.hogwartsschool.model.Question;
 import byui.cit260.hogwartsschool.model.Scene;
 import byui.cit260.hogwartsschool.model.SceneType;
 import static byui.cit260.hogwartsschool.model.SceneType.exam;
@@ -36,82 +37,112 @@ public class MapControl {
         
         Scene[] scenes = new Scene[SceneType.values().length];
         
+        
+        
+       
+        
+        
         Scene startingScene = new Scene();
         startingScene.setDescription(
                 "\n Welcome to Hogwarts. This is the Great Hall. Soon you will"
                +"be sorted into your houses to begin you journey.");
         startingScene.setMapSymbol("ST");
-        startingScene.setQuestions();
+        Question[] questionsH = new Question[15];
+        Question firstQuestionH = new Question();
+        firstQuestionH.setQuestion("Question one");
+        firstQuestionH.setAnswer("answer 1");
+        questionsH[0] = firstQuestionH;
+        startingScene.setQuestions(questionsH);
         scenes[SceneType.start.ordinal()] = startingScene;
         
         Scene potionsClass = new Scene();
         potionsClass.setDescription(
                 "\n Welcome to potions class.");
         potionsClass.setMapSymbol("P");
-        potionsClass.setInstructions();
+        String[] instructionsP = new String[4];
+        instructionsP[0] = "instruction 1";
+        potionsClass.setInstructions(instructionsP);
         scenes[SceneType.potions.ordinal()] = potionsClass;
         
         Scene charmsClass = new Scene();
         charmsClass.setDescription(
                  "\n Welcome to Charms class,");
         charmsClass.setMapSymbol("C");
-        charmsClass.setInstructions();
+        String[] instructionsC = new String[4];
+        instructionsC[0] = "instruction 1";
+        charmsClass.setInstructions(instructionsC);
         scenes[SceneType.charms.ordinal()] = charmsClass;
         
         Scene ancientRunes = new Scene();
         ancientRunes.setDescription(
                   "\nWelcome to Ancient Runes Class.");
         ancientRunes.setMapSymbol("AR");
-        ancientRunes.setInstructions();
+        String[] instructionsAR = new String[4];
+        instructionsAR[0] = "instruction 1";
+        ancientRunes.setInstructions(instructionsAR);
         scenes[SceneType.ancientRunes.ordinal()] = ancientRunes;
         
         Scene darkArts = new Scene();
         darkArts.setDescription(
                 "\nWelcome to Defense Against the Darl Arts Class.");
         darkArts.setMapSymbol("DA");
-        darkArts.setInstructions();
+        String[] instructionsDA = new String[4];
+        instructionsDA[0] = "instruction 1";
+        darkArts.setInstructions(instructionsDA);
         scenes[SceneType.defenseAgainstTheDarkArts.ordinal()] = darkArts;
         
         Scene astronomy = new Scene();
         astronomy.setDescription(
                 "\nWelcome to Astronomy Class.");
         astronomy.setMapSymbol("AS");
-        astronomy.setInstructions();
+        String[] instructionsAS = new String[4];
+        instructionsAS[0] = "instruction 1";
+        astronomy.setInstructions(instructionsAS);
         scenes[SceneType.astronomy.ordinal()] = astronomy;
         
         Scene transfiguration = new Scene();
         transfiguration.setDescription(
                 "\nWelcome to Transfiguration Class.");
         transfiguration.setMapSymbol("TR");
-        transfiguration.setInstructions();
+        String[] instructionsTR = new String[4];
+        instructionsTR[0] = "instruction 1";
+        transfiguration.setInstructions(instructionsTR);
         scenes[SceneType.transfiguration.ordinal()] = transfiguration;
         
         Scene divination = new Scene();
         divination.setDescription(
                 "\nWelcome to Divination Class.");
         divination.setMapSymbol("DV");
-        divination.setInstructions();
+        String[] instructionsDV = new String[4];
+        instructionsDV[0] = "instruction 1";
+        divination.setInstructions(instructionsDV);
         scenes[SceneType.divination.ordinal()] = divination;
         
         Scene herbology = new Scene();
         herbology.setDescription(
                 "\nWelcome to Herbology Class.");
         herbology.setMapSymbol("HB");
-        herbology.setInstructions();
+        String[] instructionsHB = new String[4];
+        instructionsHB[0] = "instruction 1";
+        herbology.setInstructions(instructionsHB);
         scenes[SceneType.herbology.ordinal()] = herbology;
         
         Scene flying = new Scene();
         flying.setDescription(
                 "\nWelcome to Flying Instruction Class.");
         flying.setMapSymbol("FY");
-        flying.setInstructions();
+        String[] instructionsFY = new String[4];
+        instructionsFY[0] = "instruction 1";
+        flying.setInstructions(instructionsFY);
         scenes[SceneType.flying.ordinal()] = flying;
         
         Scene magicalCreatures = new Scene();
         magicalCreatures.setDescription(
                 "\nWelcome to Care of Magical Creatutres Class.");
         magicalCreatures.setMapSymbol("MC");
-        magicalCreatures.setInstructions();
+        String[] instructionsMC = new String[4];
+        instructionsMC[0] = "instruction 1";
+        magicalCreatures.setInstructions(instructionsMC);
         scenes[SceneType.careOfMagicalCreatures.ordinal()] = magicalCreatures;
         
         Scene hallways = new Scene();
@@ -142,7 +173,12 @@ public class MapControl {
         exam.setDescription(
                 "\nFinal Exam.");
         exam.setMapSymbol("EX");
-        exam.setQuestions();
+        Question[] questions = new Question[10];
+        Question firstQuestion = new Question();
+        firstQuestion.setQuestion("Question one");
+        firstQuestion.setAnswer("answer 1");
+        questions[0] = firstQuestion;
+        exam.setQuestions(questions);
         scenes[SceneType.exam.ordinal()] = exam;
         
         return scenes;

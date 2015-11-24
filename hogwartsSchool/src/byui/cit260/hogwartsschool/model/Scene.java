@@ -11,8 +11,11 @@ package byui.cit260.hogwartsschool.model;
  */
 public class Scene {
     private String description;
-    private String instructions;
+    private String[] instructions;
     private Location[] location; 
+    private String mapSymbol;
+    private Question[] questions;
+    
 
     public Scene() {
     }
@@ -25,13 +28,6 @@ public class Scene {
         this.description = description;
     }
 
-    public String getInstructions() {
-        return instructions;
-    }
-
-    public void setInstructions(String instructions) {
-        this.instructions = instructions;
-    }
 
     public Location[] getLocation() {
         return location;
@@ -41,17 +37,34 @@ public class Scene {
         this.location = location;
     }
 
-    public void setMapSymbol(String st) {
-        System.out.println("*** this sets the map symbol ***");
+    public String getMapSymbol() {
+        return mapSymbol;
     }
 
-    public void setQuestions() {
-        System.out.println("*** This sets the questions ***");
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
     }
 
-    public void setInstructions() {
-       System.out.println("*** this sets the instructions for the classes ***");
+    public String[] getInstructions() {
+        return instructions;
     }
+
+    public void setInstructions(String[] instructions) {
+        this.instructions = instructions;
+    }
+
+    public Question[] getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(Question[] questions) {
+        this.questions = questions;
+    }
+    
+    
+
+
+    
     
     
     

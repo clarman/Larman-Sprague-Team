@@ -13,7 +13,7 @@ import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
 import byui.cit260.hogwartsschool.model.Notes;
 import byui.cit260.hogwartsschool.model.Player;
-import byui.cit260.hogwartsschool.model.Questions;
+import byui.cit260.hogwartsschool.model.Question;
 import byui.cit260.hogwartsschool.view.StartProgramView;
 
 /**

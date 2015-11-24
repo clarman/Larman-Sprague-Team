@@ -5,7 +5,7 @@
  */
 package byui.cit260.hogwartsschool.control;
 
-import byui.cit260.hogwartsschool.model.Questions;
+import byui.cit260.hogwartsschool.model.Question;
 import java.util.Scanner;
 
 /**
