@@ -5,6 +5,8 @@
  */
 package byui.cit260.hogwartsschool.control;
 
+import byui.cit260.hogwartsschool.exception.MapControlException;
+import byui.cit260.hogwartsschool.model.Actor;
 import byui.cit260.hogwartsschool.model.Game;
 import byui.cit260.hogwartsschool.model.Map;
 import byui.cit260.hogwartsschool.model.Question;
@@ -12,6 +14,7 @@ import byui.cit260.hogwartsschool.model.Scene;
 import byui.cit260.hogwartsschool.model.SceneType;
 import static byui.cit260.hogwartsschool.model.SceneType.exam;
 import hogwartsschool.HogwartsSchool;
+import java.awt.Point;
 
 /**
  *
@@ -184,8 +187,38 @@ public class MapControl {
         return scenes;
     }
 
-    static void moveActorsToStartingLocation(Map map) {
-       System.out.println("*** this moves actors to starting locations on map ***");
+    public static void moveActorsToStartingLocation(Map map) 
+                    throws MapControlException{
+       Actor[] actors = Actor.values();
+       
+       for(Actor actor : actors){
+           Point coordinates = actor.getCoordinates();
+           try {
+               MapControl.moveActorToLocation(actor, coordinates);
+           }
+           catch(MapControlException me) {
+               System.out.println(me.getMessage());
+           }
+                   
+       }
+       
     }
+
+    private static void moveActorToLocation(Actor actor, Point coordinates) 
+                            throws MapControlException{
+        Map map = HogwartsSchool.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if(newRow < 0 || newRow >= map.getNumRows() ||
+           newColumn < 0 || newColumn >= map.getNumColumns()) {
+            throw new MapControlException("Can not move actor to location"
+                    + coordinates.x + ", " + coordinates.y
+                    + "because that location is outside the bound of map.");
+        }
+       
+    }
+
+    
     
 }

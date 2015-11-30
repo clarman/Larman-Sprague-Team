@@ -5,6 +5,7 @@
  */
 package byui.cit260.hogwartsschool.control;
 
+import byui.cit260.hogwartsschool.exception.MapControlException;
 import byui.cit260.hogwartsschool.model.Game;
 import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
         Game game = new Game(); // create new game
         HogwartsSchool.setCurrentGame(game); // save in hogwartsSchool
         
