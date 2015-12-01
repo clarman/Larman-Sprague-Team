@@ -6,6 +6,7 @@
 package byui.cit260.hogwartsschool.view;
 
 import byui.cit260.hogwartsschool.control.GameControl;
+import byui.cit260.hogwartsschool.exception.MapControlException;
 import hogwartsschool.HogwartsSchool;
 import java.util.Scanner;
 
@@ -58,7 +59,7 @@ public class MainMenuView extends View{
     }
 
 
-    private void startNewGame() {
+    private void startNewGame() throws MapControlException {
         // create a new game
        GameControl.createNewGame(HogwartsSchool.getPlayer());
        
