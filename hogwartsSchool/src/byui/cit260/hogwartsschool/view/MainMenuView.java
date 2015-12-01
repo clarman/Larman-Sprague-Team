@@ -9,6 +9,8 @@ import byui.cit260.hogwartsschool.control.GameControl;
 import byui.cit260.hogwartsschool.exception.MapControlException;
 import hogwartsschool.HogwartsSchool;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -37,8 +39,14 @@ public class MainMenuView extends View{
         char choice = value.charAt(0);
         
         switch (choice) {
-            case 'G': // start new game
+            case 'G': {
+            try {
+                // start new game
                 this.startNewGame();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'C': // continue saved game
                 this.startExistingGame();
