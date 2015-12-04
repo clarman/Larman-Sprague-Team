@@ -73,50 +73,50 @@ class DisplayNotesView extends View{
             case 'Q': // quit program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
 
     private void potionsNotes() {
-        System.out.println("\n*** potions notes ***");
+        this.console.println("\n*** potions notes ***");
     }
 
     private void charmsNotes() {
-        System.out.println("\n*** charms notes ***");
+        this.console.println("\n*** charms notes ***");
     }
 
     private void ancientRunesNotes() {
-        System.out.println("\n*** ancient rune notes ***");
+        this.console.println("\n*** ancient rune notes ***");
     }
 
     private void defenseNotes() {
-        System.out.println("\n*** defense against the dark arts notes ***");
+        this.console.println("\n*** defense against the dark arts notes ***");
     }
 
     private void astronomyNotes() {
-        System.out.println("\n*** astronomy notes ***");
+        this.console.println("\n*** astronomy notes ***");
     }
 
     private void transfigurationNotes() {
-        System.out.println("\n*** transfiguration notes ***");
+        this.console.println("\n*** transfiguration notes ***");
     }
 
     private void divinationNotes() {
-        System.out.println("\n*** divination notes ***");
+        this.console.println("\n*** divination notes ***");
     }
 
     private void herbologyNotes() {
-        System.out.println("\n*** herbology notes ***");
+        this.console.println("\n*** herbology notes ***");
     }
 
     private void magicalCreatureNotes() {
-        System.out.println("\n*** care of magical creature notes ***");
+        this.console.println("\n*** care of magical creature notes ***");
     }
 
     private void flyingNotes() {
-        System.out.println("\n*** flying notes ***");
+        this.console.println("\n*** flying notes ***");
     }
 }
 

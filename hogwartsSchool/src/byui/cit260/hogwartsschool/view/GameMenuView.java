@@ -76,7 +76,7 @@ public class GameMenuView extends View {
             case 'Q': // quit program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -85,24 +85,24 @@ public class GameMenuView extends View {
     private void viewMap() {
         Map map = HogwartsSchool.getCurrentGame().getMap();
         Location[][] locations = map.getLocation();
-        System.out.println("Hogwarts Map");
-        System.out.println("  1   2   3   4   5");
+        this.console.println("Hogwarts Map");
+        this.console.println("  1   2   3   4   5");
         for (int i = 0; i < locations.length; i++) {
             
-            System.out.println("----------------------------------------------");
-            System.out.print(i + 1);
+            this.console.println("----------------------------------------------");
+            this.console.print(i + 1);
             for (int j = 0; j < locations[i].length; j++) {
                 Location location = locations[i][j];
-                System.out.print("|");
+                this.console.print("|");
                 String mapSymbol = location.getScene().getMapSymbol();
-                System.out.print(mapSymbol);
-                System.out.print("|");
+                this.console.print(mapSymbol);
+                this.console.print("|");
                 
                 
             }
-            System.out.println("----------------------------------------------");  
+            this.console.println("----------------------------------------------");  
         }
-        System.out.println("---------------------------------------------"); 
+        this.console.println("---------------------------------------------"); 
     }
 
     private void viewCurrentPoints() {
@@ -111,7 +111,7 @@ public class GameMenuView extends View {
     }
 
     private void moveLocation() {
-         System.out.println("\n*** moveLocation is called ***");
+         this.console.println("\n*** moveLocation is called ***");
     }
 
     private void exploreArea() {
@@ -126,7 +126,7 @@ public class GameMenuView extends View {
     }
 
     private void takeNotes() {
-        System.out.println("\n*** takeNotes is called ***");
+        this.console.println("\n*** takeNotes is called ***");
     }
 
     private void takeExam() {
@@ -135,7 +135,7 @@ public class GameMenuView extends View {
     }
 
     private void displayHelpMenu() {
-       System.out.println("\n*** displayHelpMenu ***");
+       this.console.println("\n*** displayHelpMenu ***");
     }
 
     private void calculateStarsMagnitude() {

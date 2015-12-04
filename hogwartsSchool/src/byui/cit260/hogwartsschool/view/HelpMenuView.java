@@ -53,30 +53,30 @@ public class HelpMenuView extends View{
             case 'Q': // quit program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
 
     private void goalOfGame() {
-        System.out.println("\n*** goalOfGame ***");
+        this.console.println("\n*** goalOfGame ***");
     }
 
     private void howToMove() {
-        System.out.println("\n*** howToMove ***");
+        this.console.println("\n*** howToMove ***");
     }
 
     private void getPoints() {
-        System.out.println("\n*** getPoints ***");
+        this.console.println("\n*** getPoints ***");
     }
 
     private void whatHouse() {
-        System.out.println("\n*** whatHouse ***");
+        this.console.println("\n*** whatHouse ***");
     }
 
     private void whatAreNotes() {
-        System.out.println("\n*** whatAreNotes ***");
+        this.console.println("\n*** whatAreNotes ***");
     }
     
 }

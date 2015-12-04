@@ -46,29 +46,29 @@ public class MapView extends View{
             case 'E': // Exit
                 return true;
             default:
-                System.out.println("\n*** Invalid Section *** Try again");
+                this.console.println("\n*** Invalid Section *** Try again");
                 break; 
         }
         return false; 
     }
 
     private void moveLocation() {
-       System.out.println("*** move to different location ***");
+       this.console.println("*** move to different location ***");
     }
 
     private void moveForward() {
-        System.out.println("*** move forward ***");
+        this.console.println("*** move forward ***");
     }
 
     private void moveBackward() {
-       System.out.println("*** move backward ***");
+       this.console.println("*** move backward ***");
     }
 
     private void moveRight() {
-        System.out.println("*** move right ***");
+        this.console.println("*** move right ***");
     }
 
     private void moveLeft() {
-        System.out.println("*** move left ***");
+        this.console.println("*** move left ***");
     }
 }

@@ -15,6 +15,12 @@ import byui.cit260.hogwartsschool.model.Notes;
 import byui.cit260.hogwartsschool.model.Player;
 import byui.cit260.hogwartsschool.model.Question;
 import byui.cit260.hogwartsschool.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,6 +29,12 @@ import byui.cit260.hogwartsschool.view.StartProgramView;
 public class HogwartsSchool {
 
    private static Game currentGame = null;
+   private static Player player = null;
+   
+   private static PrintWriter outFile = null;
+   private static BufferedReader inFile = null;
+   
+   private static PrintWriter logFile = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -39,18 +51,68 @@ public class HogwartsSchool {
     public static void setPlayer(Player player) {
         HogwartsSchool.player = player;
     }
-   private static Player player = null;
-   
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        HogwartsSchool.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        HogwartsSchool.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        HogwartsSchool.logFile = logFile;
+    }
+    
     public static void main(String[] args) {
        // Create StartProgramView and start the program
-        StartProgramView startProgramView = new StartProgramView();
+        StartProgramView startProgramView = null;
         try{
+            
+            // open character stream files for end user inptu and output
+            HogwartsSchool.inFile = 
+                       new BufferedReader(new InputStreamReader(System.in));
+            HogwartsSchool.outFile = new PrintWriter(System.out, true);
+            
+            startProgramView = new StartProgramView();
+            
+            // open log file
+            String filePath = "log.txt";
+            HogwartsSchool.logFile = new PrintWriter(filePath);
+            
         startProgramView.startProgram(); 
+        
         }catch(Throwable te){
             System.out.println(te.getMessage());
             te.printStackTrace();
             startProgramView.startProgram();
         }
+        finally {
+            try {
+                if (HogwartsSchool.inFile !=null)
+                HogwartsSchool.inFile.close();
+                
+                if (HogwartsSchool.outFile !=null)
+                HogwartsSchool.outFile.close();
+                
+                if(HogwartsSchool.logFile != null)
+                HogwartsSchool.logFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+        }
     }
-    
 }

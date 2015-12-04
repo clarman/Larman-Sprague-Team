@@ -5,6 +5,9 @@
  */
 package byui.cit260.hogwartsschool.view;
 
+import hogwartsschool.HogwartsSchool;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -13,6 +16,9 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface{
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = HogwartsSchool.getInFile();
+    protected final PrintWriter console = HogwartsSchool.getOutFile();
     
     public View(String promptMessage){
         this.promptMessage = promptMessage;
@@ -24,7 +30,7 @@ public abstract class View implements ViewInterface{
         boolean done = false;
                 
         do{
-            System.out.println(this.promptMessage); //display prompt message
+            this.console.println(this.promptMessage); //display prompt message
             value = this.getInput(); // get value end user entered
             done = this.doAction(value); // do action based on value entered
             
@@ -32,24 +38,28 @@ public abstract class View implements ViewInterface{
     }
     @Override
     public String getInput() {
-       Scanner keyboard = new Scanner(System.in);
        boolean valid = false;
-       String value = null;        
+       String value = null; 
+       try {
          
          while(!valid) { // while a valid name has not been retrieved
              
              // get the value entered from the keyboard
-             value = keyboard.nextLine();
+             value = this.keyboard.readLine();
              value = value.trim();
             
              //if blank has been entered
              if (value.length() <1) {
-                 System.out.println("You must enter a value.");
+                 ErrorView.display(this.getClass().getName(),
+                         "You must enter a value.");
                  continue; 
              }
              break; 
          }
-         
+       } catch (Exception e) {
+           ErrorView.display(this.getClass().getName(),
+                "Error reading input: " + e.getMessage());
+       }
          return value; // return the name
     
     }

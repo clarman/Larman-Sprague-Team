@@ -6,6 +6,9 @@
 package byui.cit260.hogwartsschool.view;
 
 import byui.cit260.hogwartsschool.control.ClassroomControl;
+import hogwartsschool.HogwartsSchool;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -13,48 +16,58 @@ import java.util.Scanner;
  * @author Chadl
  */
 class StarTempView {
-    
+    protected final BufferedReader keyboard = HogwartsSchool.getInFile();
+    protected final PrintWriter console = HogwartsSchool.getOutFile();
             
 
     void display() {
        
-            System.out.println("\nWhat is the star's magnitude?");
-            double input = this.getInput(); 
+            this.console.println("\nWhat is the star's magnitude?");
+            String input = this.getInput(); 
             
-            double magnitude = input; 
+            String magnitude = input; 
             
-            System.out.println("\nWhat is the star's distance from Earth?");
+            this.console.println("\nWhat is the star's distance from Earth?");
             input = this.getInput(); // get the user's selection
-            double distance = input; 
+            String distance = input; 
             
             this.doAction(magnitude, distance); // do action 
     }
 
-    private double getInput() {
+    private String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
-         double input = 0; 
-         Scanner keyboard = new Scanner(System.in); // keyboard input stream
+         String input = null; 
+         try {
          
          while(!valid) { // while a valid name has not been retrieved
              
              
              //get the menu item from the keyboard and trim off the blanks
-             input = keyboard.nextInt(); 
+             input = this.keyboard.readLine(); 
             
              //if the name is invalid (less than tone character in length
-             if (input < 1) {
-                 System.out.println("Invalid- you must enter a number.");
+             if (input.length() < 1) {
+                 ErrorView.display(this.getClass().getName(),
+                 "Invalid- you must enter a number.");
                  continue; // and repeat again
              }
              break; // out of the (exit) the repetition 
+         }
+         } catch (Exception e) {
+             ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
          }
          
          return input; 
     
     }
-    private void doAction(double magnitude, double distance){
+    private void doAction(String magnitude, String distance){ 
+        double distance1;
+        distance1 = Double.parseDouble(distance);
+        double magnitude1;
+        magnitude1 = Double.parseDouble(magnitude);
         ClassroomControl calculateStarsMagnitude = new ClassroomControl();
-        double answer = calculateStarsMagnitude.calculateStarsMagnitude(magnitude, distance);
-        System.out.println(answer);
+        double answer = calculateStarsMagnitude.calculateStarsMagnitude(magnitude1, distance1);
+        this.console.println(answer);
     }
 }

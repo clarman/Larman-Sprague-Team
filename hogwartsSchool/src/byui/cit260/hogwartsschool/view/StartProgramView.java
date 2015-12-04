@@ -7,6 +7,9 @@ package byui.cit260.hogwartsschool.view;
 
 import byui.cit260.hogwartsschool.control.ProgramControl;
 import byui.cit260.hogwartsschool.model.Player;
+import hogwartsschool.HogwartsSchool;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,8 @@ import java.util.Scanner;
  * @author cierasprague
  */
 public class StartProgramView {
+    protected final BufferedReader keyboard = HogwartsSchool.getInFile();
+    protected final PrintWriter console = HogwartsSchool.getOutFile();
    
     public StartProgramView () {
     }
@@ -38,14 +43,14 @@ public class StartProgramView {
    }
 
     private void displayBanner() {
-        System.out.println("\n\n*****************************************************");
+        this.console.println("\n\n*****************************************************");
         
-        System.out.println("*                                                   *"
+        this.console.println("*                                                   *"
                         +"\n* This is a game at Hogwarts school of Witchcraft   *"
                         +"\n* and Wizardry. The ulitmate goal of this game is to*"
                         +"\n* have the most house points at the end of the year.*");
         
-        System.out.println("*                                                   *"
+        this.console.println("*                                                   *"
                         +"\n* You will first be sorted into a house based on a  *"
                         +"\n* quiz. You will be able to navigate to many        *"
                         +"\n* different classes, such as Potions, Charms,       *"
@@ -57,42 +62,46 @@ public class StartProgramView {
                         +"\n* collect notes to help you with the final exam,    *"
                         +"\n* which you can gain a lot of house points from.    *");
         
-        System.out.println("*                                                   *"
+        this.console.println("*                                                   *"
                         +"\n* Good luck and have fun on this magical adventure. *"
                         +"\n*                                                   *");
         
-        System.out.println("*****************************************************");
+        this.console.println("*****************************************************");
     }
 
     private String getPlayersName() {
-         boolean valid = false; // indicates if the name has been retrieved
+        boolean valid = false; // indicates if the name has been retrieved
          String playersName = null; 
-         Scanner keyboard = new Scanner(System.in); // keyboard input stream
+         try {
          
          while(!valid) { // while a valid name has not been retrieved
              
              //promp for the player's name
-             System.out.println("Enter the player's name below:");
+             this.console.println("Enter the player's name below:");
              
              //get the name from the keyboard and trim off the blanks
-             playersName = keyboard.nextLine(); 
+             playersName = this.keyboard.readLine(); 
              playersName = playersName.trim();
             
              //if the name is invalid (less than two character in length
              if (playersName.length() <2) {
-                 System.out.println("Invalid name - the name must not be blank");
+                 ErrorView.display(this.getClass().getName(),
+                        "Invalid name - the name must not be blank");
                  continue; // and repeat again
              }
              break; // out of the (exit) the repetition 
          }
-         
+         } catch (Exception e) {
+             ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
+         }
          return playersName; // return the name
     }
 
     private void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n================================================");
-        System.out.println("\tWelcome to Hogwarts" + " " + player.getName());
-        System.out.println("\tWe hope you have a magical journey!");
-        System.out.println("==================================================");
+        this.console.println("\n\n================================================");
+        this.console.println("\tWelcome to Hogwarts" + " " + player.getName());
+        this.console.println("\tWe hope you have a magical journey!");
+        this.console.println("==================================================");
     }
 }

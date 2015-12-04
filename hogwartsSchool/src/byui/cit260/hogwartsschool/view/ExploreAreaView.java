@@ -38,18 +38,18 @@ public class ExploreAreaView extends View{
             case 'B': // exit 
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
       return false;  
     }
 
     private void exploreArea() {
-        System.out.println("*** explore the area ***");
+        this.console.println("*** explore the area ***");
     }
 
     private void continueOn() {
-       System.out.println("*** continue ***");
+       this.console.println("*** continue ***");
     }
     
 }

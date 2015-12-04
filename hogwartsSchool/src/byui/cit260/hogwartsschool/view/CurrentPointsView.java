@@ -67,37 +67,37 @@ class CurrentPointsView extends View{
             case 'Q': // quit program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
       private void viewMap() {
-        System.out.println("\n*** viewMap is called ***");
+        this.console.println("\n*** viewMap is called ***");
     }
 
     private void moveLocation() {
-         System.out.println("\n*** moveLocation is called ***");
+         this.console.println("\n*** moveLocation is called ***");
     }
 
     private void exploreArea() {
-        System.out.println("\n*** exploreArea is called ***");
+        this.console.println("\n*** exploreArea is called ***");
     }
 
     private void viewNotes() {
-        System.out.println("\n*** viewNotes is called ***");
+        this.console.println("\n*** viewNotes is called ***");
     }
 
     private void takeNotes() {
-        System.out.println("\n*** takeNotes is called ***");
+        this.console.println("\n*** takeNotes is called ***");
     }
 
     private void takeExam() {
-        System.out.println("\n*** takeExam is called ***");
+        this.console.println("\n*** takeExam is called ***");
     }
 
     private void displayHelpMenu() {
-       System.out.println("\n*** displayHelpMenu ***");
+       this.console.println("\n*** displayHelpMenu ***");
     }
     
 }

@@ -60,7 +60,7 @@ public class MainMenuView extends View{
             case 'E': // exit program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
       return false;  
@@ -77,7 +77,16 @@ public class MainMenuView extends View{
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("\n\nEnter the file path for the file where the game "
+                + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {
@@ -87,7 +96,15 @@ public class MainMenuView extends View{
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        this.console.println("\n\nEnter the file path for file where the game "
+                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(HogwartsSchool.getCurrentGame(), filePath);
+        }catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
    
 }
