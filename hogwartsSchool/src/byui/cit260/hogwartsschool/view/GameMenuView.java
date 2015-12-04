@@ -89,7 +89,7 @@ public class GameMenuView extends View {
         this.console.println("  1   2   3   4   5");
         for (int i = 0; i < locations.length; i++) {
             
-            this.console.println("----------------------------------------------");
+            this.console.println("---------------------");
             this.console.print(i + 1);
             for (int j = 0; j < locations[i].length; j++) {
                 Location location = locations[i][j];
@@ -100,9 +100,9 @@ public class GameMenuView extends View {
                 
                 
             }
-            this.console.println("----------------------------------------------");  
+            this.console.println("");  
         }
-        this.console.println("---------------------------------------------"); 
+        this.console.println("--------------------"); 
     }
 
     private void viewCurrentPoints() {
