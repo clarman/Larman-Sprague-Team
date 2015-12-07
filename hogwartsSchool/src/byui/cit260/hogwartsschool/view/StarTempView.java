@@ -6,10 +6,13 @@
 package byui.cit260.hogwartsschool.view;
 
 import byui.cit260.hogwartsschool.control.ClassroomControl;
+import byui.cit260.hogwartsschool.exception.ClassroomControlException;
 import hogwartsschool.HogwartsSchool;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,6 +34,7 @@ class StarTempView {
             input = this.getInput(); // get the user's selection
             String distance = input; 
             
+            this.console.println("\n Answer:");
             this.doAction(magnitude, distance); // do action 
     }
 
@@ -67,7 +71,15 @@ class StarTempView {
         double magnitude1;
         magnitude1 = Double.parseDouble(magnitude);
         ClassroomControl calculateStarsMagnitude = new ClassroomControl();
-        double answer = calculateStarsMagnitude.calculateStarsMagnitude(magnitude1, distance1);
+        double answer = 0;
+        try {
+            answer = calculateStarsMagnitude.calculateStarsMagnitude(magnitude1, distance1);
+        } catch (ClassroomControlException ex) {
+            System.out.println(ex.getMessage());
+            
+        }
         this.console.println(answer);
     }
+
+    
 }

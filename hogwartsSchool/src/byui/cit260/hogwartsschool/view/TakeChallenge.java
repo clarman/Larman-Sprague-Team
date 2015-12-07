@@ -6,10 +6,13 @@
 package byui.cit260.hogwartsschool.view;
 
 import byui.cit260.hogwartsschool.control.ClassroomControl;
+import byui.cit260.hogwartsschool.exception.ClassroomControlException;
 import hogwartsschool.HogwartsSchool;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -66,7 +69,12 @@ class TakeChallenge {
         double distance1;
         distance1 = Double.parseDouble(distance);
         ClassroomControl calculateAverageAcceleration = new ClassroomControl();
-        double answer = calculateAverageAcceleration.calculateAverageAcceleration(time1, distance1);
+        double answer = 0;
+        try {
+            answer = calculateAverageAcceleration.calculateAverageAcceleration(time1, distance1);
+        } catch (ClassroomControlException ex) {
+           System.out.println(ex.getMessage());
+        }
         this.console.println(answer);
     } 
  }
