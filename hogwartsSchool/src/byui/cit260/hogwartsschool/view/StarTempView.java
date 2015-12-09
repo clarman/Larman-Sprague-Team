@@ -76,7 +76,9 @@ class StarTempView {
             answer = calculateStarsMagnitude.calculateStarsMagnitude(magnitude1, distance1);
         } catch (ClassroomControlException ex) {
             System.out.println(ex.getMessage());
-            
+            }
+        catch(NumberFormatException nf){
+            this.console.println("Enter a valid number.");
         }
         this.console.println(answer);
     }

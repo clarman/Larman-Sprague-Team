@@ -30,6 +30,7 @@ public class GameMenuView extends View {
             + "\nS - Star Input                                                 "
             + "\nX - Take exam                                                  "
             + "\nC - CHALLENGE                                                  "
+            + "\nR - Report - List of Actors"
             + "\nH - Help                                                       "
             + "\nQ - Quit                                                       "
             + "\n---------------------------------------------------------------");
@@ -69,6 +70,9 @@ public class GameMenuView extends View {
                 break;
             case 'C': // Challenge, flying formula 
                 this.takeChallenge();
+                break;
+            case 'R': //list of actors report
+                this.reportActors();
                 break;
             case 'H': // help
                 this.displayHelpMenu();
@@ -146,6 +150,17 @@ public class GameMenuView extends View {
     private void takeChallenge() {
         TakeChallenge takeChallenge = new TakeChallenge();
         takeChallenge.displayChallenge(); 
+    }
+
+    private void reportActors() {
+       this.console.println("\nEnter the file path of where the report is to "
+                            + "be printed.");
+       String filePath = this.getInput();
+       try {ReportActorsView view1 = new ReportActorsView();
+       view1.display();
+       } catch(Exception ex){
+           ErrorView.display("GameMenuView", ex.getMessage());
+       }
     }
     
 }
