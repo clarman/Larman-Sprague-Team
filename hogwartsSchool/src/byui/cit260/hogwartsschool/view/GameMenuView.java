@@ -6,43 +6,49 @@
 package byui.cit260.hogwartsschool.view;
 
 import byui.cit260.hogwartsschool.control.QuestionsControl;
+import byui.cit260.hogwartsschool.exception.GameControlException;
 import byui.cit260.hogwartsschool.model.Location;
 import byui.cit260.hogwartsschool.model.Map;
 import hogwartsschool.HogwartsSchool;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author cierasprague
  */
 public class GameMenuView extends View {
-        public GameMenuView(){
-           super("\n"
-            + "\n---------------------------------------------------------------"
-            + "\n| GameMenu                                                    |"
-            + "\n---------------------------------------------------------------"
-            + "\nV - View map                                                   "
-            + "\nP - View current points                                        "
-            + "\nM - Move to a new location                                     "
-            + "\nE - Explore the area                                           "
-            + "\nN - View notes                                                 "
-            + "\nT - Take notes                                                 "
-            + "\nS - Star Input                                                 "
-            + "\nX - Take exam                                                  "
-            + "\nC - CHALLENGE                                                  "
-            + "\nR - Report - List of Actors"
-            + "\nH - Help                                                       "
-            + "\nQ - Quit                                                       "
-            + "\n---------------------------------------------------------------");
-        }
-    
+
+    public GameMenuView() {
+        super("\n"
+                + "\n---------------------------------------------------------------"
+                + "\n| GameMenu                                                    |"
+                + "\n---------------------------------------------------------------"
+                + "\nV - View map                                                   "
+                + "\nP - View current points                                        "
+                + "\nM - Move to a new location                                     "
+                + "\nE - Explore the area                                           "
+                + "\nN - View notes                                                 "
+                + "\nT - Take notes                                                 "
+                + "\nS - Star Input                                                 "
+                + "\nX - Take exam                                                  "
+                + "\nC - CHALLENGE                                                  "
+                + "\nR - Report - List of Actors"
+                + "\nH - Help                                                       "
+                + "\nQ - Quit                                                       "
+                + "\n---------------------------------------------------------------");
+    }
+
     @Override
     public boolean doAction(Object inputs) {
-        
-        String value = (String) inputs; 
+
+        String value = (String) inputs;
         value = value.toUpperCase();
         char choice = value.charAt(0);
-        
+
         switch (choice) {
             case 'V': // view map
                 this.viewMap();
@@ -71,8 +77,18 @@ public class GameMenuView extends View {
             case 'C': // Challenge, flying formula 
                 this.takeChallenge();
                 break;
-            case 'R': //list of actors report
+            case 'R': {
+            try {
+                //list of actors report
                 this.reportActors();
+            } catch (FileNotFoundException fnfe) {
+                try {
+                    throw new GameControlException(fnfe.getMessage());
+                } catch (GameControlException ex) {
+                   
+                }
+            }
+        }
                 break;
             case 'H': // help
                 this.displayHelpMenu();
@@ -92,7 +108,7 @@ public class GameMenuView extends View {
         this.console.println("Hogwarts Map");
         this.console.println("  1   2   3   4   5");
         for (int i = 0; i < locations.length; i++) {
-            
+
             this.console.println("---------------------");
             this.console.print(i + 1);
             for (int j = 0; j < locations[i].length; j++) {
@@ -101,12 +117,11 @@ public class GameMenuView extends View {
                 String mapSymbol = location.getScene().getMapSymbol();
                 this.console.print(mapSymbol);
                 this.console.print("|");
-                
-                
+
             }
-            this.console.println("");  
+            this.console.println("");
         }
-        this.console.println("--------------------"); 
+        this.console.println("--------------------");
     }
 
     private void viewCurrentPoints() {
@@ -115,7 +130,7 @@ public class GameMenuView extends View {
     }
 
     private void moveLocation() {
-         this.console.println("\n*** moveLocation is called ***");
+        this.console.println("\n*** moveLocation is called ***");
     }
 
     private void exploreArea() {
@@ -134,33 +149,62 @@ public class GameMenuView extends View {
     }
 
     private void takeExam() {
-        QuestionsControl question = new QuestionsControl(); 
+        QuestionsControl question = new QuestionsControl();
         question.getQuestion();
     }
 
     private void displayHelpMenu() {
-       this.console.println("\n*** displayHelpMenu ***");
+        this.console.println("\n*** displayHelpMenu ***");
     }
 
     private void calculateStarsMagnitude() {
-       StarTempView tempStar = new StarTempView();
-       tempStar.display();
-    }
-    
-    private void takeChallenge() {
-        TakeChallenge takeChallenge = new TakeChallenge();
-        takeChallenge.displayChallenge(); 
+        StarTempView tempStar = new StarTempView();
+        tempStar.display();
     }
 
-    private void reportActors() {
-       this.console.println("\nEnter the file path of where the report is to "
-                            + "be printed.");
-       String filePath = this.getInput();
-       try {ReportActorsView view1 = new ReportActorsView();
-       view1.display();
-       } catch(Exception ex){
-           ErrorView.display("GameMenuView", ex.getMessage());
-       }
+    private void takeChallenge() {
+        TakeChallenge takeChallenge = new TakeChallenge();
+        takeChallenge.displayChallenge();
     }
-    
-}
+
+    private void reportActors() throws FileNotFoundException {
+        this.console.println("\nEnter the file path of where the report is to "
+                + "be printed.");
+        String filePath = this.getInput();
+
+        try (PrintWriter reportFile = new PrintWriter(filePath)) {
+     
+            Map map = HogwartsSchool.getCurrentGame().getMap();
+            Location[][] locations = map.getLocation();
+       
+            reportFile.println ("    Hogwarts Map");
+            
+
+            reportFile.println (
+            "  1   2   3   4   5");
+            for (int i = 0;i< locations.length ; i++) {
+            
+            reportFile.println("---------------------");
+                reportFile.print(i + 1);
+                for (int j = 0; j < locations[i].length; j++) {
+                    Location location = locations[i][j];
+                     reportFile.print("|");
+                    String mapSymbol = location.getScene().getMapSymbol();
+                     reportFile.print(mapSymbol);
+                     reportFile.print("|");
+
+                }
+                 reportFile.println("");
+            }
+             
+
+            reportFile.println ("--------------------"); 
+    }
+     
+     catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+     }
+        }
+    }
+
+
