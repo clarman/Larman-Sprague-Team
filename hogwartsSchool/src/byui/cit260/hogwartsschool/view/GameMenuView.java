@@ -36,7 +36,7 @@ public class GameMenuView extends View {
                 + "\nS - Star Input                                                 "
                 + "\nX - Take exam                                                  "
                 + "\nC - CHALLENGE                                                  "
-                + "\nR - Report - List of Actors"
+                + "\nR - Report - Map with locations"
                 + "\nH - Help                                                       "
                 + "\nQ - Quit                                                       "
                 + "\n---------------------------------------------------------------");
@@ -80,7 +80,7 @@ public class GameMenuView extends View {
             case 'R': {
             try {
                 //list of actors report
-                this.reportActors();
+                this.reportMap();
             } catch (FileNotFoundException fnfe) {
                 try {
                     throw new GameControlException(fnfe.getMessage());
@@ -167,7 +167,7 @@ public class GameMenuView extends View {
         takeChallenge.displayChallenge();
     }
 
-    private void reportActors() throws FileNotFoundException {
+    private void reportMap() throws FileNotFoundException {
         this.console.println("\nEnter the file path of where the report is to "
                 + "be printed.");
         String filePath = this.getInput();
