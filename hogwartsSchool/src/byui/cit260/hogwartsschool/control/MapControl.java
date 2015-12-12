@@ -63,7 +63,7 @@ public class MapControl {
                 "\n Welcome to potions class.");
         potionsClass.setMapSymbol("P");
         String[] instructionsP = new String[4];
-        instructionsP[0] = "instruction 1";
+        instructionsP[0] = "Make potion.";
         potionsClass.setInstructions(instructionsP);
         scenes[SceneType.potions.ordinal()] = potionsClass;
         
@@ -72,7 +72,7 @@ public class MapControl {
                  "\n Welcome to Charms class,");
         charmsClass.setMapSymbol("C");
         String[] instructionsC = new String[4];
-        instructionsC[0] = "instruction 1";
+        instructionsC[0] = "Make object float.";
         charmsClass.setInstructions(instructionsC);
         scenes[SceneType.charms.ordinal()] = charmsClass;
         
@@ -81,7 +81,7 @@ public class MapControl {
                   "\nWelcome to Ancient Runes Class.");
         ancientRunes.setMapSymbol("AR");
         String[] instructionsAR = new String[4];
-        instructionsAR[0] = "instruction 1";
+        instructionsAR[0] = "Determine rune numbers.";
         ancientRunes.setInstructions(instructionsAR);
         scenes[SceneType.ancientRunes.ordinal()] = ancientRunes;
         
@@ -90,7 +90,7 @@ public class MapControl {
                 "\nWelcome to Defense Against the Darl Arts Class.");
         darkArts.setMapSymbol("DA");
         String[] instructionsDA = new String[4];
-        instructionsDA[0] = "instruction 1";
+        instructionsDA[0] = "Duel.";
         darkArts.setInstructions(instructionsDA);
         scenes[SceneType.defenseAgainstTheDarkArts.ordinal()] = darkArts;
         
@@ -99,7 +99,7 @@ public class MapControl {
                 "\nWelcome to Astronomy Class.");
         astronomy.setMapSymbol("AS");
         String[] instructionsAS = new String[4];
-        instructionsAS[0] = "instruction 1";
+        instructionsAS[0] = "Learn constellations.";
         astronomy.setInstructions(instructionsAS);
         scenes[SceneType.astronomy.ordinal()] = astronomy;
         
@@ -108,7 +108,7 @@ public class MapControl {
                 "\nWelcome to Transfiguration Class.");
         transfiguration.setMapSymbol("TR");
         String[] instructionsTR = new String[4];
-        instructionsTR[0] = "instruction 1";
+        instructionsTR[0] = "Transform animal into a cup.";
         transfiguration.setInstructions(instructionsTR);
         scenes[SceneType.transfiguration.ordinal()] = transfiguration;
         
@@ -117,7 +117,7 @@ public class MapControl {
                 "\nWelcome to Divination Class.");
         divination.setMapSymbol("DV");
         String[] instructionsDV = new String[4];
-        instructionsDV[0] = "instruction 1";
+        instructionsDV[0] = "Determine what the tea leaves are saying.";
         divination.setInstructions(instructionsDV);
         scenes[SceneType.divination.ordinal()] = divination;
         
@@ -126,7 +126,7 @@ public class MapControl {
                 "\nWelcome to Herbology Class.");
         herbology.setMapSymbol("HB");
         String[] instructionsHB = new String[4];
-        instructionsHB[0] = "instruction 1";
+        instructionsHB[0] = "Repot a mandrake.";
         herbology.setInstructions(instructionsHB);
         scenes[SceneType.herbology.ordinal()] = herbology;
         
@@ -135,7 +135,7 @@ public class MapControl {
                 "\nWelcome to Flying Instruction Class.");
         flying.setMapSymbol("FY");
         String[] instructionsFY = new String[4];
-        instructionsFY[0] = "instruction 1";
+        instructionsFY[0] = "Learn to fly.";
         flying.setInstructions(instructionsFY);
         scenes[SceneType.flying.ordinal()] = flying;
         
@@ -144,7 +144,7 @@ public class MapControl {
                 "\nWelcome to Care of Magical Creatutres Class.");
         magicalCreatures.setMapSymbol("MC");
         String[] instructionsMC = new String[4];
-        instructionsMC[0] = "instruction 1";
+        instructionsMC[0] = "Learn how to care for a thestral.";
         magicalCreatures.setInstructions(instructionsMC);
         scenes[SceneType.careOfMagicalCreatures.ordinal()] = magicalCreatures;
         
@@ -177,10 +177,105 @@ public class MapControl {
                 "\nFinal Exam.");
         exam.setMapSymbol("EX");
         Question[] questions = new Question[10];
+        
         Question firstQuestion = new Question();
-        firstQuestion.setQuestion("Question one");
-        firstQuestion.setAnswer("answer 1");
+        firstQuestion.setQuestion("\n 1. What Potion makes you successful in all your" +
+                         "+ \nendeavors?" +
+                         "+ \n a. Essence of Dittany" +
+                         "+ \n b. Felix Felicis" +
+                         "+ \n c. Plyjuice Potion" +
+                         "+ \n d. Draught of Living Death");
+        firstQuestion.setAnswer("B");
+        
+         Question secondQuestion = new Question();
+        secondQuestion.setQuestion("\n 2. What charm allows you to breath under water?" +
+                         "+ \n a. Muffiato Charm" +
+                         "+ \n b. Summoning Charm" +
+                         "+ \n c. Wingardium Leviosa" +
+                         "+ \n d. Bubble-Head Charm");
+        secondQuestion.setAnswer("D");
+        
+         Question thirdQuestion = new Question();
+         thirdQuestion.setQuestion("\n 3. What rune symbolizes the number 2?" +
+                         "+ \n a. Graphorn" +
+                         "+ \n b. Unicorn" +
+                         "+ \n c. Hydra" +
+                         "+ \n d. Runespoor");
+         thirdQuestion.setAnswer("A");
+        
+         Question fourthQuestion = new Question();
+        fourthQuestion.setQuestion("\n 4. What charm stuns your victim?" +
+                         "+ \n a. Expelliarmus" +
+                         "+ \n b. Stupify" +
+                         "+ \n c. Wingardium Leviosa" +
+                         "+ \n d. Cruciatus");
+        fourthQuestion.setAnswer("B");
+        
+         Question fifthQuestion = new Question();
+        fifthQuestion.setQuestion("\n 5. What constellation is named after an" +
+                              "+\nEthiopian Queen?" +
+                         "+ \n a. Hercules" +
+                         "+ \n b. Cetus" +
+                         "+ \n c. Cassiopeia" +
+                         "+ \n d. Carina");
+        fifthQuestion.setAnswer("C");
+        
+         Question sixthQuestion = new Question();
+        sixthQuestion.setQuestion("\n 6. What is a person called when they can" +
+                              "+\ntransform into an animal?" +
+                         "+ \n a. Metamorphmagus" +
+                         "+ \n b. Switcher" +
+                         "+ \n c. Animagus" +
+                         "+ \n d. Werewolf");
+        sixthQuestion.setAnswer("C");
+        
+         Question seventhQuestion = new Question();
+        seventhQuestion.setQuestion("\n 7. What is the form of divination called when" +
+                             "+\n you are reading tea leaves?" +
+                         "+ \n a. Crystal-gazing" +
+                         "+ \n b. Dream interpretation" +
+                         "+ \n c. Cartomancy" +
+                         "+ \n d. Tessomancy");
+        seventhQuestion.setAnswer("D");
+        
+         Question eighthQuestion = new Question();
+        eighthQuestion.setQuestion("\n 8. What plant has the magical ability to" +
+                                     "+\nconstrict or strangle?" +
+                         "+ \n a. Devil's Snare" +
+                         "+ \n b. Mandrake" +
+                         "+ \n c. Puffapods" +
+                         "+ \n d. Dittany");
+        eighthQuestion.setAnswer("A");
+        
+         Question ninthQuestion = new Question();
+        ninthQuestion.setQuestion("\n 9. What animal is a winged horse with a skeletal" +
+                              "+\nbody, face with reptiliam features, and wide" +
+                              "+\nleathery wings that resemble a bat's?" +
+                         "+ \n a. Hippogriff" +
+                         "+ \n b. Thestral" +
+                         "+ \n c. Chinese fire-ball" +
+                         "+ \n d. Basilisk");
+        ninthQuestion.setAnswer("B");
+        
+         Question tenthQuestion = new Question();
+        tenthQuestion.setQuestion("\n 10. What is the player called in Quidditch that" +
+                               "+\nthat defends the three posts?" +
+                         "+ \n a. Seeker" +
+                         "+ \n b. Chaser" +
+                         "+ \n c. Keeper" +
+                         "+ \n d. Beater");
+        tenthQuestion.setAnswer("C");
+        
         questions[0] = firstQuestion;
+        questions[1] = secondQuestion;
+        questions[2] = thirdQuestion;
+        questions[3] = fourthQuestion;
+        questions[4] = fifthQuestion;
+        questions[5] = sixthQuestion;
+        questions[6] = seventhQuestion;
+        questions[7] = eighthQuestion;
+        questions[8] = ninthQuestion;
+        questions[9] = tenthQuestion;
         exam.setQuestions(questions);
         scenes[SceneType.exam.ordinal()] = exam;
         

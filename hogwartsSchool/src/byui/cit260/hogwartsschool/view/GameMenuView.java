@@ -5,6 +5,7 @@
  */
 package byui.cit260.hogwartsschool.view;
 
+
 import byui.cit260.hogwartsschool.control.QuestionsControl;
 import byui.cit260.hogwartsschool.exception.GameControlException;
 import byui.cit260.hogwartsschool.model.Location;
@@ -130,7 +131,7 @@ public class GameMenuView extends View {
     }
 
     private void moveLocation() {
-        this.console.println("\n*** moveLocation is called ***");
+       this.console.println("*** this moves your player ***");
     }
 
     private void exploreArea() {

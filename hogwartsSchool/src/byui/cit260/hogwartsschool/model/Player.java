@@ -17,6 +17,7 @@ public class Player implements Serializable {
     private String house;
     private long points;
     private Game[] game;
+    private Location[] location; 
 
     public Player() {
     }
@@ -52,6 +53,15 @@ public class Player implements Serializable {
     public void setGame(Game[] game) {
         this.game = game;
     }
+
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
+    
     
 
     @Override
