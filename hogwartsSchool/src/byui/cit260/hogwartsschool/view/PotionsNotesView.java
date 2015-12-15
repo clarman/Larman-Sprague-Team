@@ -73,7 +73,8 @@ public class PotionsNotesView extends View{
     }
 
     private void mix() {
-        this.console.println("\n*** Mix ***");
+       CauldronsTempView mix = new CauldronsTempView();
+       mix.display();
     }
     }
 

@@ -15,24 +15,24 @@ import java.io.PrintWriter;
  *
  * @author cierasprague
  */
-class FlyingTempView {
-   protected final BufferedReader keyboard = HogwartsSchool.getInFile();
+class CauldronsTempView {
+    protected final BufferedReader keyboard = HogwartsSchool.getInFile();
     protected final PrintWriter console = HogwartsSchool.getOutFile();
             
 
     void display() {
        
-            this.console.println("\nWhat is your time?");
+            this.console.println("\nWhat is the diameter of the cauldron?");
             String input = this.getInput(); 
             
-            String time = input; 
+            String diameter = input; 
             
-            this.console.println("\nWhat is your distance?");
+            this.console.println("\nWhat is the depth of the cauldron?");
             input = this.getInput(); // get the user's selection
-            String distance = input; 
+            String depth = input; 
             
             this.console.println("\n Answer:");
-            this.doAction(time, distance); // do action 
+            this.doAction(diameter, depth); // do action 
     }
 
     private String getInput() {
@@ -62,15 +62,15 @@ class FlyingTempView {
          return input; 
     
     }
-    private void doAction(String time, String distance){ 
-        double time1;
-        time1 = Double.parseDouble(time);
-        double distance1;
-        distance1 = Double.parseDouble(distance);
-        ClassroomControl calculateAverageAcceleration = new ClassroomControl();
+    private void doAction(String diameter, String depth){ 
+        double diameter1;
+        diameter1 = Double.parseDouble(diameter);
+        double depth1;
+        depth1 = Double.parseDouble(depth);
+        ClassroomControl calculateCauldronsSize = new ClassroomControl();
         double answer = 0;
         try {
-            answer = calculateAverageAcceleration.calculateAverageAcceleration(time1, distance1);
+            answer = calculateCauldronsSize.calculateCauldronsSize(diameter1, depth1);
         } catch (ClassroomControlException ex) {
             System.out.println(ex.getMessage());
             
@@ -81,4 +81,3 @@ class FlyingTempView {
     
 }
  
-
