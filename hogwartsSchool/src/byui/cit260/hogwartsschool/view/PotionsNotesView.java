@@ -57,7 +57,8 @@ public class PotionsNotesView extends View{
     }
 
     private void viewInstructions() {
-        this.console.println("\n*** Intrustions ***");
+        this.console.println("\nCreate a potion by adding Spiders, Newt and Water to your potion."
+                + "once all your ingredient's are added mix them together and create your potion.");
     }
 
     private void addSpiders() {
@@ -69,12 +70,12 @@ public class PotionsNotesView extends View{
     }
 
     private void addWater() {
-        this.console.println("\n*** Add Water ***");
+        CauldronsTempView addWater = new CauldronsTempView();
+       addWater.display();
     }
 
     private void mix() {
-       CauldronsTempView mix = new CauldronsTempView();
-       mix.display();
+      this.console.println("\n*** Mix ***");
     }
     }
 
