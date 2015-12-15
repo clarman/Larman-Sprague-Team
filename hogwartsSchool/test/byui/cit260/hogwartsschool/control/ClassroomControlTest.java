@@ -5,6 +5,7 @@
  */
 package byui.cit260.hogwartsschool.control;
 
+import byui.cit260.hogwartsschool.exception.ClassroomControlException;
 import hogwartsschool.HogwartsSchool;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -26,7 +27,7 @@ public class ClassroomControlTest {
      * Test of calculateCauldronsSize method, of class ClassroomControl.
      */
     @Test
-    public void testCalculateCauldronsSize() {
+    public void testCalculateCauldronsSize() throws ClassroomControlException {
         this.console.println("calculateCauldronsSize");
         // test case 1
         this.console.println("\tTest case #1");
@@ -106,7 +107,7 @@ public class ClassroomControlTest {
      * Test of calculateStarsMagnitude method, of class ClassroomControl.
      */
     @Test
-    public void testCalculateStarsMagnitude() {
+    public void testCalculateStarsMagnitude() throws ClassroomControlException {
         this.console.println("calculateStarsMagnitude");
         //test case 1
         this.console.println("\tTest case # 1");
@@ -183,7 +184,7 @@ public class ClassroomControlTest {
      * Test of calculateAverageAcceleration method, of class ClassroomControl.
      */
     @Test
-    public void testAverageAcceleration() {
+    public void testAverageAcceleration() throws ClassroomControlException {
         this.console.println("calculateAverageAcceleration");
         //test case 1
         this.console.println("\tTest case # 1");

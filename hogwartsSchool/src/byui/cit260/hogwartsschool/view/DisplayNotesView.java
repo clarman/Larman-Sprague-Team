@@ -85,39 +85,48 @@ class DisplayNotesView extends View{
     }
 
     private void charmsNotes() {
-        this.console.println("\n*** charms notes ***");
+        CharmsNotesView charmsNotes = new CharmsNotesView();
+        charmsNotes.display();
     }
 
     private void ancientRunesNotes() {
-        this.console.println("\n*** ancient rune notes ***");
+       AncientRunesNotesView ancientRunesNotes = new AncientRunesNotesView();
+       ancientRunesNotes.display();
     }
 
     private void defenseNotes() {
-        this.console.println("\n*** defense against the dark arts notes ***");
+        DefenseNotesView defenseNotes = new DefenseNotesView();
+        defenseNotes.display();
     }
 
     private void astronomyNotes() {
-        this.console.println("\n*** astronomy notes ***");
+        AstronomyNotesView astronomyNotes = new AstronomyNotesView();
+        astronomyNotes.display();
     }
 
     private void transfigurationNotes() {
-        this.console.println("\n*** transfiguration notes ***");
+        TransfigurationNotesView transfigurationNotes = new TransfigurationNotesView();
+        transfigurationNotes.display();
     }
 
     private void divinationNotes() {
-        this.console.println("\n*** divination notes ***");
+        DivinationNotesView divinationNotes = new DivinationNotesView();
+        divinationNotes.display();
     }
 
     private void herbologyNotes() {
-        this.console.println("\n*** herbology notes ***");
+        HerbologyNotesView herbologyNotes = new HerbologyNotesView();
+        herbologyNotes.display();
     }
 
     private void magicalCreatureNotes() {
-        this.console.println("\n*** care of magical creature notes ***");
+        MagicalCreatureNotesView magicalCreatureNotes = new MagicalCreatureNotesView();
+        magicalCreatureNotes.display();
     }
 
     private void flyingNotes() {
-        this.console.println("\n*** flying notes ***");
+        FlyingNotesView flyingNotes = new FlyingNotesView();
+        flyingNotes.display();
     }
 }
 
