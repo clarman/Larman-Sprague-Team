@@ -96,11 +96,5 @@ public class Notes implements Serializable {
             return false;
         }
         return true;
-    }
-
-    public void setNotetype(String type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+    }  
 }

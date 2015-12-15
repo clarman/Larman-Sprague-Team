@@ -53,7 +53,7 @@ public class MapView extends View{
     }
 
     private void moveLocation() {
-       this.console.println("*** move to different location ***");
+       this.console.println("*** move location ***");
     }
 
     private void moveForward() {

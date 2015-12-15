@@ -66,14 +66,14 @@ public class HelpMenuView extends View{
                 + "\nalong the way. Once you have exceeded and taken all your"
                 + "\nclasses you can then take the exam to finish the game."
                 + "\nOnce all the classes and exam has been taken, "
-                + "the house who ends up with the most points wins the game.");
+                + "\nthe house who ends up with the most points wins the game.");
     }
 
     private void howToMove() {
         this.console.println("\nTo move to a new location type the letter to the"
                 + "\ndirection you want to move in the 'Move to a New Location'"
                 + "\nsection under the Game Menu. Once you are there you will be"
-                + "\n able to move your character forward, backward, left and right.");
+                + "\nable to move your character forward, backward, left and right.");
     }
 
     private void getPoints() {

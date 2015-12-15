@@ -217,8 +217,6 @@ public class MapControl {
                     + "because that location is outside the bound of map.");
         }
        
-    }
-
-    
+    } 
     
 }
