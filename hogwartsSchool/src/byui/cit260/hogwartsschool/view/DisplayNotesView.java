@@ -80,7 +80,8 @@ class DisplayNotesView extends View{
     }
 
     private void potionsNotes() {
-        this.console.println("\n*** potions notes ***");
+        PotionsNotesView potionsNotes = new PotionsNotesView();
+        potionsNotes.display(); 
     }
 
     private void charmsNotes() {
