@@ -103,7 +103,8 @@ public class GameMenuView extends View {
     }
 
     private void moveLocation() {
-         this.console.println("\n*** moveLocation is called ***");
+         MapView moveLocation = new MapView();
+         moveLocation.display();
     }
 
     private void exploreArea() {
