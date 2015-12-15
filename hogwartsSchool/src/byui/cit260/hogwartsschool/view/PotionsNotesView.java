@@ -61,7 +61,7 @@ public class PotionsNotesView extends View{
              + "\nsecond newt and then finally water to your cauldron."
              + "\nOnce all your ingredient's are added mix them together "
              + "\nand create your potion."
-             + "\nIf the potion is done right your house will recieve points.");
+             + "\nIf the potion is done right your House will recieve points.");
     }
 
     private void addSpiders() {
@@ -79,7 +79,8 @@ public class PotionsNotesView extends View{
 
     private void mix() {
       this.console.println("\nAll ingredients have been added to the cauldron."
-           + "\nYou have now successfully created your first potion");
+           + "\nYou have now successfully created your first potion!"
+           +"100 points has been added to your House!");
     }
     }
 
