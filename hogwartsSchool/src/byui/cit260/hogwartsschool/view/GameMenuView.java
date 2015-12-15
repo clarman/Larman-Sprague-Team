@@ -27,9 +27,7 @@ public class GameMenuView extends View {
             + "\nE - Explore the area                                           "
             + "\nN - View notes                                                 "
             + "\nT - Take notes                                                 "
-            + "\nS - Star Input                                                 "
             + "\nX - Take exam                                                  "
-            + "\nC - CHALLENGE                                                  "
             + "\nH - Help                                                       "
             + "\nQ - Quit                                                       "
             + "\n---------------------------------------------------------------");
@@ -61,14 +59,8 @@ public class GameMenuView extends View {
             case 'T': // take notes
                 this.takeNotes();
                 break;
-            case 'S': //calculateStarsMagntude
-                this.calculateStarsMagnitude();
-                break;
             case 'X': // take exam
                 this.takeExam();
-                break;
-            case 'C': // Challenge, flying formula 
-                this.takeChallenge();
                 break;
             case 'H': // help
                 this.displayHelpMenu();
@@ -135,17 +127,7 @@ public class GameMenuView extends View {
     }
 
     private void displayHelpMenu() {
-       this.console.println("\n*** displayHelpMenu ***");
+       HelpMenuView displayHelpMenu = new HelpMenuView();
+       displayHelpMenu.display();
     }
-
-    private void calculateStarsMagnitude() {
-       StarTempView tempStar = new StarTempView();
-       tempStar.display();
-    }
-    
-    private void takeChallenge() {
-        TakeChallenge takeChallenge = new TakeChallenge();
-        takeChallenge.displayChallenge(); 
-    }
-    
 }

@@ -57,16 +57,19 @@ public class PotionsNotesView extends View{
     }
 
     private void viewInstructions() {
-        this.console.println("\nCreate a potion by adding Spiders, Newt and Water to your potion."
-                + "once all your ingredient's are added mix them together and create your potion.");
+        this.console.println("\nCreate a potion by adding first spiders, "
+             + "\nsecond newt and then finally water to your cauldron."
+             + "\nOnce all your ingredient's are added mix them together "
+             + "\nand create your potion."
+             + "\nIf the potion is done right your house will recieve points.");
     }
 
     private void addSpiders() {
-        this.console.println("\n*** Add Spiders ***");
+        this.console.println("\nSpiders have been added to the cauldron");
     }
 
     private void addNewts() {
-        this.console.println("\n*** Add Newts ***");
+        this.console.println("\nNewt has been added to the cauldron");
     }
 
     private void addWater() {
@@ -75,7 +78,8 @@ public class PotionsNotesView extends View{
     }
 
     private void mix() {
-      this.console.println("\n*** Mix ***");
+      this.console.println("\nAll ingredients have been added to the cauldron."
+           + "\nYou have now successfully created your first potion");
     }
     }
 

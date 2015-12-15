@@ -53,7 +53,7 @@ public class CharmsNotesView extends View{
     }
 
     private void viewInstructions() {
-        this.console.println("\n*** Intrustions ***");
+        this.console.println("\n** Instructions ***");
     }
 
     private void swish() {
